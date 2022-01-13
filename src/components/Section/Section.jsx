@@ -2,7 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Title } from './Section.styled';
 
-export const Section = ({ title }) => <Title>{title}</Title>;
+const Section = ({ title, children }) => (
+  <>
+    <Title>{title}</Title>
+    {children}
+  </>
+);
+
+export default Section;
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,

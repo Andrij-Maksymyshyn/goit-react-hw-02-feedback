@@ -2,13 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { MenuSecond, ItemSecond } from './Statistics.styled';
 
-export const Statistics = ({
-  good,
-  neutral,
-  bad,
-  total,
-  positivePercentage,
-}) => (
+const Statistics = ({ good, neutral, bad, total, positivePercentage }) => (
   <MenuSecond>
     <ItemSecond>Good: {good}</ItemSecond>
     <ItemSecond>Neutral: {neutral}</ItemSecond>
@@ -17,6 +11,8 @@ export const Statistics = ({
     <ItemSecond>Positive feedback: {positivePercentage}%</ItemSecond>
   </MenuSecond>
 );
+
+export default Statistics;
 
 Statistics.propTypes = {
   good: PropTypes.number.isRequired,
