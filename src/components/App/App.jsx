@@ -12,6 +12,8 @@ class App extends Component {
     bad: 0,
   };
 
+  optionsKeys = Object.keys(this.state);
+
   leaveFeedback = label => {
     this.setState(prevState => ({
       [label]: prevState[label] + 1,
@@ -30,13 +32,12 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-    const optionsKeys = Object.keys(this.state);
 
     return (
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={optionsKeys}
+            options={this.optionsKeys}
             onLeaveFeedback={this.leaveFeedback}
           />
         </Section>
